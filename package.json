@@ -1,0 +1,21 @@
+{
+  "name": "ankyra",
+  "version": "0.0.0",
+  "description": "Flashcard Web Application",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimasmjunior/ankyra.git"
+  },
+  "keywords": [
+    "flashcard"
+  ],
+  "author": "Dimas Moreira Junior",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/dimasmjunior/ankyra/issues"
+  },
+  "dependencies": {
+    "express": "~4.13.3"
+  }
+}
