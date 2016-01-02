@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Flashcard Web Application",
   "main": "index.js",
+  "scripts": {"start": "node app.js"},
   "repository": {
     "type": "git",
     "url": "https://github.com/dimasmjunior/ankyra.git"
