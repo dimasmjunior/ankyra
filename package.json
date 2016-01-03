@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "Flashcard Web Application",
   "main": "index.js",
-  "scripts": {"start": "node app.js"},
+  "scripts": {
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dimasmjunior/ankyra.git"
@@ -17,6 +19,7 @@
     "url": "https://github.com/dimasmjunior/ankyra/issues"
   },
   "dependencies": {
-    "express": "~4.13.3"
+    "express": "~4.13.3",
+    "mongodb": "~2.1.2"
   }
 }

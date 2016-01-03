@@ -2,15 +2,14 @@ var express = require('express');
 var app = express();
 
 var PORT = process.env.PORT || 8080;
+var DB = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test';
 
-var model = {
-  cards: {
-    front: '1+1',
-    back: '2',
-    tags: ['math.algebra'],
-    seen: 0
-  }
-};
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect(DB, function(err, db) {
+  console.log("Connected correctly to server.");
+  db.close();
+});
 
 app.get('/cards', function(request, response){
   response.send('GET ALL');
