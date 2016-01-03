@@ -50,3 +50,8 @@ The restful API is accessible through the /api URL:
  * Delete card: DELETE /api/cards/:id
 * Learning Control:
  * Report result: POST /api/results/
+
+## References
+
+* [Node.js MongoDB Driver API](http://mongodb.github.io/node-mongodb-native/2.0/api/)
+* [Express.js API](http://expressjs.com/en/4x/api.html)
