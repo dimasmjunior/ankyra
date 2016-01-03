@@ -1,17 +1,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var mongodb = require('mongodb');
 
 var app = express();
 var parseUrlencoded = bodyParser.urlencoded({ extended: false });
 
 var PORT = process.env.PORT || 8080;
-var DB = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test';
 
-var MongoClient = require('mongodb').MongoClient;
+var DB_URL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test';
+var cards;
 
-MongoClient.connect(DB, function(err, db) {
-  console.log("Connected correctly to server.");
-  db.close();
+mongodb.MongoClient.connect(DB_URL, function(err, db) {
+  cards = db.collection('cards');
+  console.log("Connected do MongoDB.");
 });
 
 app.get('/cards', function(request, response){
@@ -24,9 +25,12 @@ app.get('/cards/:id', function (request, response) {
   console.log('GET ' + request.params.id);
 });
 
-app.post('/cards', parseUrlencoded, function (request, response) {
-  response.send('POST');
-  console.log(request.body);
+app.post('/cards', parseUrlencoded, function (req, res) {
+  console.log('request.body: ' + req.body);
+  cards.insertOne(req.body, function(err, r){
+    console.log('created: ' + r);
+    res.status(201).json(r);
+  });
 });
 
 app.delete('/cards/:id', function (request, response) {
