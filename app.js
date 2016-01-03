@@ -27,10 +27,14 @@ app.get('/cards/:id', function (request, response) {
 
 app.post('/cards', parseUrlencoded, function (req, res) {
   console.log('request.body: ' + req.body);
-  cards.insertOne(req.body, function(err, r){
-    console.log('created: ' + r);
-    res.status(201).json(r);
-  });
+  cards.insertOne(req.body)
+    .then(function (r) {
+      console.log('created: ' + r);
+      res.status(201).json(r);
+    })
+    .catch(function (error) {
+      console.log('error: ' + error);
+    });
 });
 
 app.delete('/cards/:id', function (request, response) {
