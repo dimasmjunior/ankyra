@@ -45,11 +45,13 @@ The restful API is accessible through the /api URL:
 
 * Cards CRUD:
  * Create card: POST /api/cards/
+ * Retrieve cards: GET /api/cards/
  * Retrieve card: GET /api/cards/:id
  * Update card: PUT /api/cards/:id
  * Delete card: DELETE /api/cards/:id
-* Learning Control:
- * Report result: POST /api/results/
+* Views:
+ * Retrieve next card: GET /api/views/
+ * Increment results: POST /api/views/
 
 ## References
 
