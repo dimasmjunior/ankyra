@@ -11,11 +11,23 @@ var model = {
 };
 
 app.get('/cards', function(request, response){
-  response.send(model.cards);
+  response.send('GET ALL');
+  console.log('GET ALL');
 });
 
 app.get('/cards/:id', function (request, response) {
+  response.send('GET ' + request.params.id);
   console.log('GET ' + request.params.id);
+});
+
+app.post('/cards', function (request, response) {
+  response.send('POST');
+  console.log('POST');
+});
+
+app.delete('/cards/:id', function (request, response) {
+  response.send('DELETE ' + request.params.id);
+  console.log('DELETE ' + request.params.id);
 });
 
 app.listen(process.env.PORT || 8080);
