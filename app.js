@@ -14,4 +14,8 @@ app.get('/cards', function(request, response){
   response.send(model.cards);
 });
 
+app.get('/cards/:id', function (request, response) {
+  console.log('GET ' + request.params.id);
+});
+
 app.listen(process.env.PORT || 8080);
