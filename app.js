@@ -15,14 +15,29 @@ mongodb.MongoClient.connect(DB_URL, function(err, db) {
   console.log("Connected do MongoDB.");
 });
 
-app.get('/cards', function(request, response){
-  response.send('GET ALL');
+app.get('/cards', function(req, res){
   console.log('GET ALL');
+  cards.find().toArray()
+    .then(function (r) {
+      console.log(r);
+      res.status(200).json(r);
+    })
+    .catch(function (error) {
+      console.log('error: ' + error);
+    });
 });
 
-app.get('/cards/:id', function (request, response) {
-  response.send('GET ' + request.params.id);
-  console.log('GET ' + request.params.id);
+app.get('/cards/:id', function (req, res) {
+  console.log('GET ' + req.params.id);
+  var id = new mongodb.ObjectID(req.params.id);
+  cards.findOne({_id: id})
+    .then(function (r) {
+      console.log(r);
+      res.status(200).json(r);
+    })
+    .catch(function (error) {
+      console.log('error: ' + error);
+    });
 });
 
 app.post('/cards', parseUrlencoded, function (req, res) {
