@@ -1,5 +1,8 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var app = express();
+var parseUrlencoded = bodyParser.urlencoded({ extended: false });
 
 var PORT = process.env.PORT || 8080;
 var DB = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test';
@@ -21,9 +24,9 @@ app.get('/cards/:id', function (request, response) {
   console.log('GET ' + request.params.id);
 });
 
-app.post('/cards', function (request, response) {
+app.post('/cards', parseUrlencoded, function (request, response) {
   response.send('POST');
-  console.log('POST');
+  console.log(request.body);
 });
 
 app.delete('/cards/:id', function (request, response) {
