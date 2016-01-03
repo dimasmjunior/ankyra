@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+var PORT = process.env.PORT || 8080;
+
 var model = {
   cards: {
     front: '1+1',
@@ -30,4 +32,6 @@ app.delete('/cards/:id', function (request, response) {
   console.log('DELETE ' + request.params.id);
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(PORT, function () {
+  console.log('Ankyra listening on port ' + PORT + '.');
+});
