@@ -4,7 +4,8 @@
   "description": "Flashcard Web Application",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,9 @@
     "url": "https://github.com/dimasmjunior/ankyra/issues"
   },
   "dependencies": {
+    "body-parser": "~1.14.2",
+    "bower": "^1.7.2",
     "express": "~4.13.3",
-    "mongodb": "~2.1.2",
-    "body-parser": "~1.14.2"
+    "mongodb": "~2.1.2"
   }
 }
