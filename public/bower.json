@@ -1,0 +1,25 @@
+{
+  "name": "ankyra",
+  "homepage": "https://github.com/dimasmjunior/ankyra",
+  "authors": [
+    "Dimas Moreira Junior <dimasmjunior@gmail.com>"
+  ],
+  "description": "Flashcard Web Application",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "flashcard"
+  ],
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
