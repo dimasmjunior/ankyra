@@ -10,7 +10,7 @@
   "keywords": [
     "flashcard"
   ],
-  "license": "BSD",
+  "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",
