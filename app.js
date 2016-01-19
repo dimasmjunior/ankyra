@@ -17,7 +17,7 @@ mongodb.MongoClient.connect(DB_URL, function(err, db) {
   console.log("Connected do MongoDB.");
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/dist'));
 
 app.get('/cards', function(req, res){
   console.log('GET ALL');
