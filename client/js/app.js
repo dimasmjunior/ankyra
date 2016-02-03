@@ -1,1 +1,3 @@
-var app = angular.module('ankyra', []);
+(function () {
+  var app = angular.module('ankyra', []);
+})();
