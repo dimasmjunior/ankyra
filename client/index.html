@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ankyra">
   <head>
     <title>Flashcard</title>
     <!-- inject:css -->
@@ -9,8 +9,10 @@
   <body>
     <!-- inject:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endinject -->
+    <script src="js/app.js"></script>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -23,7 +25,7 @@
       </div>
     </nav>
     <div class="container">
-      <div class="well">1+1</div>
+      <div class="well">1 + 1 = {{1 + 1}}</div>
       <button type="button" class="btn btn-primary">Show</button>
     </div>
   </body>
