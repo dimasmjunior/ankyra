@@ -7,7 +7,9 @@
         controllerAs: 'review'
       })
       .when('/cards', {
-        templateUrl: 'templates/cards/index.html'
+        templateUrl: 'templates/cards/index.html',
+        controller: 'CardsController',
+        controllerAs: 'cards'
       })
       .otherwise({
         redirectTo: '/review'
