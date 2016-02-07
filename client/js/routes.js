@@ -11,6 +11,11 @@
         controller: 'CardsController',
         controllerAs: 'cards'
       })
+      .when('/cards/edit/:id', {
+        templateUrl: 'templates/cards/edit.html',
+        controller: 'CardsEditController',
+        controllerAs: 'card'
+      })
       .otherwise({
         redirectTo: '/review'
       });
