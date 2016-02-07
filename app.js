@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
 
 var app = express();
-var parseUrlencoded = bodyParser.urlencoded({ extended: false });
+var parseUrlencoded = bodyParser.json();
 
 var PORT = process.env.PORT || 8080;
 
@@ -34,9 +34,23 @@ app.get('/cards', function(req, res){
 app.get('/cards/:id', function (req, res) {
   console.log('GET ' + req.params.id);
   var id = new mongodb.ObjectID(req.params.id);
-  cards.findOne({_id: id})
+  cards.findOne({_id: id}, {_id: 0})
     .then(function (r) {
       console.log(r);
+      res.status(200).json(r);
+    })
+    .catch(function (error) {
+      console.log('error: ' + error);
+    });
+});
+
+app.put('/cards/:id', parseUrlencoded, function (req, res) {
+  console.log('PUT ' + req.params.id);
+  console.log('request.body: %j', req.body);
+  var id = new mongodb.ObjectID(req.params.id);
+  cards.updateOne({_id: id}, req.body)
+    .then(function (r) {
+      console.log('updated: ' + r);
       res.status(200).json(r);
     })
     .catch(function (error) {

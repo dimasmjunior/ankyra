@@ -6,5 +6,12 @@
         .success(function(data) {
           controller.card = data;
         });
+      this.update = function (card) {
+        controller.errors = null;
+        $http({method: 'PUT', url: '/cards/' + $routeParams.id, data: card})
+          .catch(function (card) {
+            controller.errors = card.data.error;
+          });
+      };
     });
 })();
