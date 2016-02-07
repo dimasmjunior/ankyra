@@ -1,5 +1,5 @@
 <div class="container">
   <div class="well" ng-repeat="card in cards.cards">
-    <a href="#/cards/edit/{{ card._id }}">{{ card.front }}</a>
+    <a ng-href="#/cards/edit/{{ card._id }}">{{ card.front }}</a>
   </div>
 </div>
