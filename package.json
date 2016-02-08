@@ -2,9 +2,9 @@
   "name": "ankyra",
   "version": "0.0.0",
   "description": "Flashcard Web Application",
-  "main": "index.js",
+  "main": "server/app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server/app.js",
     "postinstall": "bower install"
   },
   "repository": {
