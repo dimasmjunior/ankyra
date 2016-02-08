@@ -11,6 +11,11 @@
         controller: 'CardsController',
         controllerAs: 'cards'
       })
+      .when('/cards/create/', {
+        templateUrl: 'templates/cards/create.html',
+        controller: 'CardsCreateController',
+        controllerAs: 'card'
+      })
       .when('/cards/edit/:id', {
         templateUrl: 'templates/cards/update.html',
         controller: 'CardsUpdateController',
