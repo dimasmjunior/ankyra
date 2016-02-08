@@ -1,9 +1,10 @@
 (function () {
   angular.module('ankyra')
-    .controller('ReviewController', function($scope, Cards) {
+    .controller('ReviewController', function(Cards) {
+      var vm = this;
       Cards.all()
         .success(function(data) {
-          $scope.card = data[0];
+          vm.card = data[0];
         });
     });
 })();

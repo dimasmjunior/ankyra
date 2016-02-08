@@ -2,13 +2,13 @@
   <form>
     <div class="form-group">
       <label for="front">Front</label>
-      <textarea class="form-control" rows="3" id="front" ng-model="card.front"></textarea>
+      <textarea class="form-control" rows="3" id="front" ng-model="vm.card.front"></textarea>
     </div>
     <div class="form-group">
       <label for="back">Back</label>
-      <textarea class="form-control" rows="3" id="back" ng-model="card.back"></textarea>
+      <textarea class="form-control" rows="3" id="back" ng-model="vm.card.back"></textarea>
     </div>
-    <button type="submit" class="btn btn-default" ng-click="create(card)">Create</button>
+    <button type="submit" class="btn btn-default" ng-click="vm.create(vm.card)">Create</button>
   </form>
-  <p ng-if="errors">{{errors}}</p>
+  <p ng-if="errors">{{vm.errors}}</p>
 </div>

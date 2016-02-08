@@ -1,15 +1,16 @@
 (function () {
   angular.module('ankyra')
-    .controller('CardsUpdateController', function($routeParams, $scope, Cards) {
+    .controller('CardsUpdateController', function($routeParams, Cards) {
+      var vm = this;
       Cards.one($routeParams.id)
         .success(function(data) {
-          $scope.card = data;
+          vm.card = data;
         });
-      $scope.update = function (card) {
-        $scope.errors = null;
+      vm.update = function (card) {
+        vm.errors = null;
         Cards.update($routeParams.id, card)
           .catch(function (card) {
-            $scope.errors = card.data.error;
+            vm.errors = card.data.error;
           });
       };
     });

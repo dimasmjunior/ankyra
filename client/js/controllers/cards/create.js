@@ -1,11 +1,12 @@
 (function () {
   angular.module('ankyra')
-    .controller('CardsCreateController', function($routeParams, $scope, Cards) {
-      $scope.create = function (card) {
-        $scope.errors = null;
+    .controller('CardsCreateController', function($routeParams, Cards) {
+      var vm = this;
+      vm.create = function (card) {
+        vm.errors = null;
         Cards.create(card)
           .catch(function (card) {
-            $scope.errors = card.data.error;
+            vm.errors = card.data.error;
           });
       };
     });
