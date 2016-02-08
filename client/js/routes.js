@@ -12,8 +12,8 @@
         controllerAs: 'cards'
       })
       .when('/cards/edit/:id', {
-        templateUrl: 'templates/cards/edit.html',
-        controller: 'CardsEditController',
+        templateUrl: 'templates/cards/update.html',
+        controller: 'CardsUpdateController',
         controllerAs: 'card'
       })
       .otherwise({

@@ -1,6 +1,6 @@
 (function () {
   angular.module('ankyra')
-    .controller('CardsEditController', function($routeParams, $scope, Cards) {
+    .controller('CardsUpdateController', function($routeParams, $scope, Cards) {
       Cards.one($routeParams.id)
         .success(function(data) {
           $scope.card = data;
