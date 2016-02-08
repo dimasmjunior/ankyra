@@ -1,5 +1,8 @@
 (function () {
-  angular.module('ankyra')
+  'use strict';
+
+  angular
+    .module('ankyra')
     .factory("Cards", function CardsFactory($http) {
       return {
         all: function () {
@@ -16,4 +19,5 @@
         }
       };
     });
+
 })();

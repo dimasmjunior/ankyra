@@ -1,10 +1,22 @@
 (function () {
-  angular.module('ankyra')
-    .controller('CardsController', function(Cards) {
+  'use strict';
+
+  angular
+    .module('ankyra')
+    .controller('CardsAllController', CardsAllController);
+
+  function CardsAllController(Cards) {
       var vm = this;
-      Cards.all()
-        .success(function(data) {
-          vm.cards = data;
-        });
-    });
+
+      activate();
+
+      function activate() {
+        Cards
+          .all()
+          .success(function(data) {
+            vm.cards = data;
+          });
+      }
+  }
+
 })();

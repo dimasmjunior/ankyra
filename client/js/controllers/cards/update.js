@@ -1,17 +1,32 @@
 (function () {
-  angular.module('ankyra')
-    .controller('CardsUpdateController', function($routeParams, Cards) {
-      var vm = this;
-      Cards.one($routeParams.id)
+  'use strict';
+
+  angular
+    .module('ankyra')
+    .controller('CardsUpdateController', CardsUpdateController);
+
+  function CardsUpdateController($routeParams, Cards) {
+    var vm = this;
+
+    vm.update = update;
+
+    activate();
+
+    function activate() {
+      Cards
+        .one($routeParams.id)
         .success(function(data) {
           vm.card = data;
         });
-      vm.update = function (card) {
-        vm.errors = null;
-        Cards.update($routeParams.id, card)
-          .catch(function (card) {
-            vm.errors = card.data.error;
-          });
-      };
-    });
+    }
+
+    function update(card) {
+      Cards
+        .update($routeParams.id, card)
+        .catch(function (card) {
+          vm.errors = card.data.error;
+        });
+    }
+  }
+
 })();

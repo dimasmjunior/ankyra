@@ -1,3 +1,7 @@
 (function () {
-  angular.module('ankyra', ['ngRoute']);
+  'use strict';
+  
+  angular
+    .module('ankyra', ['ngRoute']);
+
 })();
