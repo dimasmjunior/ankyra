@@ -1,16 +1,15 @@
 (function () {
   angular.module('ankyra')
-    .controller('CardsEditController', function($http, $routeParams) {
-      var controller = this;
+    .controller('CardsEditController', function($http, $routeParams, $scope) {
       $http({method: 'GET', url: '/cards/' + $routeParams.id})
         .success(function(data) {
-          controller.card = data;
+          $scope.card = data;
         });
-      this.update = function (card) {
-        controller.errors = null;
-        $http({method: 'PUT', url: '/cards/' + $routeParams.id, data: card})
+      $scope.update = function () {
+        $scope.errors = null;
+        $http({method: 'PUT', url: '/cards/' + $routeParams.id, data: $scope.card})
           .catch(function (card) {
-            controller.errors = card.data.error;
+            $scope.errors = card.data.error;
           });
       };
     });

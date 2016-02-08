@@ -1,10 +1,9 @@
 (function () {
   angular.module('ankyra')
-    .controller('ReviewController', function($http) {
-      var controller = this;
+    .controller('ReviewController', function($http, $scope) {
       $http({method: 'GET', url: '/cards'})
         .success(function(data) {
-          controller.card = data[0];
+          $scope.card = data[0];
         });
     });
 })();
