@@ -1,7 +1,7 @@
 (function () {
   angular.module('ankyra')
-    .controller('ReviewController', function($http, $scope) {
-      $http({method: 'GET', url: '/cards'})
+    .controller('ReviewController', function($scope, Cards) {
+      Cards.all()
         .success(function(data) {
           $scope.card = data[0];
         });

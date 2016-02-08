@@ -8,7 +8,7 @@
       <label for="back">Back</label>
       <textarea class="form-control" rows="3" id="back" ng-model="card.back"></textarea>
     </div>
-    <button type="submit" class="btn btn-default" ng-click="update()">Update</button>
+    <button type="submit" class="btn btn-default" ng-click="update(card)">Update</button>
   </form>
   <p ng-if="errors">{{errors}}</p>
 </div>
