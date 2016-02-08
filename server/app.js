@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
 
 var app = express();
-var parseUrlencoded = bodyParser.json();
+var parseBody = bodyParser.json();
 
 var PORT = process.env.PORT || 8080;
 
@@ -44,7 +44,7 @@ app.get('/cards/:id', function (req, res) {
     });
 });
 
-app.put('/cards/:id', parseUrlencoded, function (req, res) {
+app.put('/cards/:id', parseBody, function (req, res) {
   console.log('PUT ' + req.params.id);
   console.log('request.body: %j', req.body);
   var id = new mongodb.ObjectID(req.params.id);
@@ -58,8 +58,9 @@ app.put('/cards/:id', parseUrlencoded, function (req, res) {
     });
 });
 
-app.post('/cards', parseUrlencoded, function (req, res) {
-  console.log('request.body: ' + req.body);
+app.post('/cards', parseBody, function (req, res) {
+  console.log('POST');
+  console.log('request.body: %j', req.body);
   cards.insertOne(req.body)
     .then(function (r) {
       console.log('created: ' + r);
