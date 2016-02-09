@@ -3,7 +3,7 @@ var mainBowerFiles = require('main-bower-files');
 var inject = require('gulp-inject');
 var eslint = require('gulp-eslint');
 
-gulp.task('default', function() {
+gulp.task('inject', function() {
     var libs = gulp.src(mainBowerFiles(), {read: false});
     return gulp.src('client/index.html')
         .pipe(inject(libs, {relative: true}))
