@@ -1,0 +1,14 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="front">Front</label>
+      <textarea class="form-control" rows="3" id="front" ng-model="vm.card.front"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="back">Back</label>
+      <textarea class="form-control" rows="3" id="back" ng-model="vm.card.back"></textarea>
+    </div>
+    <button type="submit" class="btn btn-danger" ng-click="vm.delete()">Delete</button>
+  </form>
+  <p ng-if="errors">{{vm.errors}}</p>
+</div>

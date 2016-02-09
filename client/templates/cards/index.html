@@ -2,5 +2,6 @@
   <a class="btn btn-default" ng-href="#/cards/create/">Create Card</a>
   <div class="well" ng-repeat="card in vm.cards">
     <a ng-href="#/cards/edit/{{ card._id }}">{{ card.front }}</a>
+    <a class="btn btn-danger" ng-href="#/cards/delete/{{ card._id }}">Delete</a>
   </div>
 </div>

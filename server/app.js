@@ -71,9 +71,17 @@ app.post('/cards', parseBody, function (req, res) {
     });
 });
 
-app.delete('/cards/:id', function (request, response) {
-  response.send('DELETE ' + request.params.id);
-  console.log('DELETE ' + request.params.id);
+app.delete('/cards/:id', function (req, res) {
+  console.log('DELETE ' + req.params.id);
+  var id = new mongodb.ObjectID(req.params.id);
+  cards.deleteOne({_id: id})
+    .then(function (r) {
+      console.log(r);
+      res.status(200).json(r);
+    })
+    .catch(function (error) {
+      console.log('error: ' + error);
+    });
 });
 
 app.listen(PORT, function () {

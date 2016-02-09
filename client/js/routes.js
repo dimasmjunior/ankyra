@@ -25,6 +25,11 @@
           controller: 'CardsUpdateController',
           controllerAs: 'vm'
         })
+        .when('/cards/delete/:id', {
+          templateUrl: 'templates/cards/delete.html',
+          controller: 'CardsDeleteController',
+          controllerAs: 'vm'
+        })
         .otherwise({
           redirectTo: '/review'
         });

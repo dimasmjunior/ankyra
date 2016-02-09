@@ -16,6 +16,9 @@
         },
         update: function (id, card) {
           return $http({method: 'PUT', url: '/cards/' + id, data: card});
+        },
+        delete: function (id) {
+          return $http({method: 'DELETE', url: '/cards/' + id});
         }
       };
     });
