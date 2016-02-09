@@ -5,7 +5,7 @@
     .module('ankyra')
     .controller('CardsUpdateController', CardsUpdateController);
 
-  function CardsUpdateController($routeParams, Cards) {
+  function CardsUpdateController($routeParams, $location, Cards) {
     var vm = this;
 
     vm.update = update;
@@ -23,6 +23,9 @@
     function update(card) {
       Cards
         .update($routeParams.id, card)
+        .success(function (data) {
+          $location.path('/cards');
+        })
         .catch(function (card) {
           vm.errors = card.data.error;
         });
