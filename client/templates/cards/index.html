@@ -1,7 +1,27 @@
 <div class="container">
-  <a class="btn btn-default" ng-href="#/cards/create/">Create Card</a>
+
+  <form style="margin-bottom: 2em; margin-top: 2em;" class="center-block"
+        ng-submit="search()">
+    <div class="input-group col-sm-offset-1 col-sm-10">
+      <input type="search" class="form-control"
+             placeholder="type what you want to search"
+             ng-model="filter" focus="true">
+      <span class="input-group-btn">
+        <button class="btn btn-default" tooltip="Filter" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+        <a class="btn btn-success" tooltip="New Card" type="button"
+           ng-href="#/cards/create/">
+          <i class="fa fa-sticky-note-o"></i>&nbsp;
+          <i class="fa fa-plus"></i>
+        </a>
+      </span>
+    </div>
+  </form>
+
   <div class="well" ng-repeat="card in vm.cards">
     <a ng-href="#/cards/update/{{ card._id }}">{{ card.front }}</a>
     <a class="btn btn-danger" ng-href="#/cards/delete/{{ card._id }}">Delete</a>
   </div>
+
 </div>
