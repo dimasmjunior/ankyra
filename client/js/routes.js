@@ -20,7 +20,7 @@
           controller: 'CardsCreateController',
           controllerAs: 'vm'
         })
-        .when('/cards/edit/:id', {
+        .when('/cards/update/:id', {
           templateUrl: 'templates/cards/update.html',
           controller: 'CardsUpdateController',
           controllerAs: 'vm'
