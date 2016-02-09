@@ -2,11 +2,13 @@ var gulp = require('gulp');
 var mainBowerFiles = require('main-bower-files');
 var inject = require('gulp-inject');
 var eslint = require('gulp-eslint');
+var series = require('stream-series');
 
 gulp.task('inject', function() {
-    var libs = gulp.src(mainBowerFiles(), {read: false});
+    var vendor = gulp.src(mainBowerFiles(), {read: false});
+    var app = gulp.src(['client/js/**/*.js'], {read: false});
     return gulp.src('client/index.html')
-        .pipe(inject(libs, {relative: true}))
+        .pipe(inject(series(vendor, app), {relative: true}))
         .pipe(gulp.dest('client'));
 });
 
