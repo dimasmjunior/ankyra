@@ -1,6 +1,6 @@
 <div class="container">
 
-  <form style="margin-bottom: 2em; margin-top: 2em;" class="center-block"
+  <form style="margin-bottom: 4em; margin-top: 2em;" class="center-block"
         ng-submit="search()">
     <div class="input-group col-sm-offset-1 col-sm-10">
       <input type="search" class="form-control"
@@ -19,9 +19,26 @@
     </div>
   </form>
 
-  <div class="well" ng-repeat="card in vm.cards">
-    <a ng-href="#/cards/update/{{ card._id }}">{{ card.front }}</a>
-    <a class="btn btn-danger" ng-href="#/cards/delete/{{ card._id }}">Delete</a>
-  </div>
+  <table class="table table-hover table-striped"
+         style="margin-bottom: 4em">
+    <thead>
+      <tr>
+        <th style="width: 75%">Front</th>
+        <th style="width: 15%">Tags</th>
+        <th style="width: 10%">Views</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="card in vm.cards">
+        <td>
+          <a tooltip="Update" ng-href="#/cards/update/{{ card._id }}">
+            <strong>{{ card.front }}</strong>
+          </a>
+        </td>
+        <td><span class="label label-info">history</span></td>
+        <td>5</td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
