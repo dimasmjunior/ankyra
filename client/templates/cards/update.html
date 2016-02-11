@@ -8,7 +8,11 @@
       <label for="back">Back</label>
       <textarea class="form-control" rows="3" id="back" ng-model="vm.card.back"></textarea>
     </div>
-    <button type="submit" class="btn btn-default" ng-click="vm.update(vm.card)">Update</button>
+    <div class="text-right">
+      <a class="btn btn-default" ng-href="#/cards">Cancel</a>
+      <button type="submit" class="btn btn-danger" ng-click="vm.delete()">Delete</button>
+      <button type="submit" class="btn btn-primary" ng-click="vm.update(vm.card)">Update</button>
+    </div>
   </form>
   <p ng-if="errors">{{vm.errors}}</p>
 </div>

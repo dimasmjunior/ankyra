@@ -9,6 +9,7 @@
     var vm = this;
 
     vm.update = update;
+    vm.delete = del;
 
     activate();
 
@@ -23,6 +24,17 @@
     function update(card) {
       Cards
         .update($routeParams.id, card)
+        .success(function (data) {
+          $location.path('/cards');
+        })
+        .catch(function (card) {
+          vm.errors = card.data.error;
+        });
+    }
+
+    function del() {
+      Cards
+        .delete($routeParams.id)
         .success(function (data) {
           $location.path('/cards');
         })
