@@ -65,3 +65,4 @@ The restful API is accessible through the /api URL:
 * [AngularJS API](https://code.angularjs.org/1.4.9/docs/api)
 * [Angular ESLint](https://www.npmjs.com/package/eslint-plugin-angular)
 * [Bootstrap](http://getbootstrap.com/)
+* [Font Awesome](http://fontawesome.io/icons/)
