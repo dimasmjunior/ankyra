@@ -9,9 +9,9 @@
       <textarea class="form-control" rows="3" id="back" ng-model="vm.card.back"></textarea>
     </div>
     <div class="text-right">
-      <a class="btn btn-default" ng-href="#/cards">Cancel</a>
-      <button type="submit" class="btn btn-danger" ng-click="vm.delete()">Delete</button>
-      <button type="submit" class="btn btn-primary" ng-click="vm.update(vm.card)">Update</button>
+      <a class="btn btn-default" ng-href="#/cards"><i class="fa fa-undo"></i>&nbsp; Cancel</a>&nbsp;&nbsp;
+      <button type="submit" class="btn btn-danger" ng-click="vm.delete()"><i class="fa fa-trash-o"></i>&nbsp; Delete</button>&nbsp;&nbsp;
+      <button type="submit" class="btn btn-primary" ng-click="vm.update(vm.card)"><i class="fa fa-pencil"></i>&nbsp; Update</button>
     </div>
   </form>
   <p ng-if="errors">{{vm.errors}}</p>
