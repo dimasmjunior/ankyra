@@ -55,7 +55,13 @@ The restful API is accessible through the /api URL:
 
 ## References
 
+### Server Side
+
 * [Node.js MongoDB Driver API](http://mongodb.github.io/node-mongodb-native/2.0/api/)
 * [Express.js API](http://expressjs.com/en/4x/api.html)
+
+### Client Side
+
 * [AngularJS API](https://code.angularjs.org/1.4.9/docs/api)
 * [Angular ESLint](https://www.npmjs.com/package/eslint-plugin-angular)
+* [Bootstrap](http://getbootstrap.com/)
