@@ -33,14 +33,16 @@
     }
 
     function del() {
-      Cards
-        .delete($routeParams.id)
-        .success(function (data) {
-          $location.path('/cards');
-        })
-        .catch(function (card) {
-          vm.errors = card.data.error;
-        });
+      if (window.confirm("Are you sure you want to delete this card?")) {
+        Cards
+          .delete($routeParams.id)
+          .success(function (data) {
+            $location.path('/cards');
+          })
+          .catch(function (card) {
+            vm.errors = card.data.error;
+          });
+      }
     }
   }
 
