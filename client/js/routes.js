@@ -10,12 +10,17 @@
           controller: 'ReviewController',
           controllerAs: 'vm'
         })
+        .when('/review/show', {
+          templateUrl: 'templates/review/back.html',
+          controller: 'ReviewController',
+          controllerAs: 'vm'
+        })
         .when('/cards', {
           templateUrl: 'templates/cards/index.html',
           controller: 'CardsAllController',
           controllerAs: 'vm'
         })
-        .when('/cards/create/', {
+        .when('/cards/create', {
           templateUrl: 'templates/cards/create.html',
           controller: 'CardsCreateController',
           controllerAs: 'vm'
